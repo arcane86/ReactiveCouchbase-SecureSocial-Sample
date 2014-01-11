@@ -1,0 +1,63 @@
+### IDEA ###
+
+*.iml
+*.eml
+*.ipr
+*.iws
+.idea/
+/.idea_modules
+
+### JAVA ###
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+### SCALA ###
+
+*.log
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+### PLAY ###
+
+# Ignore Play! working directory #
+db
+eclipse
+lib
+log
+logs
+modules
+precompiled
+project/project
+project/target
+target
+tmp
+test-result
+server.pid
+
+### OS ###
+
+# Linux
+.*
+!.gitignore
+*~
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
