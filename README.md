@@ -6,6 +6,32 @@ About
 This application is an example of SecureSocial integration in Play! Scala
 backed up by Couchbase using Reactive Couchbase driver.
 
+Usage
+--------
+This sample uses system variables for configuration, so you may export some
+and use play dist to run the application :
+```sh
+export COUCHABSE_HOST=
+export COUCHABSE_PORT=
+export COUCHABSE_BASE=
+export COUCHABSE_BUCKET=
+export COUCHABSE_USER=
+export COUCHABSE_PASS=
+
+export GMAIL_USER=
+export GMAIL_PASSWORD=
+export EMAIL_ADDRESS=
+
+export TWITTER_CONSUMER_KEY=
+export TWITTER_CONSUMER_SECRET=
+export FACEBOOK_CLIENT_ID=
+export FACEBOOK_CLIENT_SECRET=
+export GOOGLE_CLIENT_ID=
+export GOOGLE_CLIENT_SECRET=
+```
+
+Or you can just update the conf files to your convenience.
+
 Versions used
 --------
 [Play! framework](http://www.playframework.com/) 2.2.1
