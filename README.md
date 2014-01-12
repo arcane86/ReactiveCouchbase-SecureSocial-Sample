@@ -32,6 +32,25 @@ export GOOGLE_CLIENT_SECRET=
 
 Or you can just update the conf files to your convenience.
 
+Couchbase views
+--------
+You will need two different views for secure social to retreive the correct
+users.
+
+One simple by_idKey :
+```js
+function (doc, meta) {
+  emit(meta.id, null);
+}
+```
+
+and one by_emailAndProvider :
+```js
+function (doc, meta) {
+  emit([doc.secureSocialUser.email, doc.secureSocialUser.identityId.providerId], null);
+}
+```
+
 Versions used
 --------
 [Play! framework](http://www.playframework.com/) 2.2.1
