@@ -1,7 +1,31 @@
-@(message: String)
+@(secured: Boolean, user: Option[securesocial.core.Identity])
 
-@main("Welcome to Play") {
+@main("Reactive Couchbse & SecureSocial sample") {
 
-    @play20.welcome(message)
+    <div class="container">
+        <h1>@{
+            if(secured) "Secured page"
+            else "User aware page"
+        }</h1>
+        <div class="jumbotron">
+            <h2>Hello, @user.fold("guest")(u => u.fullName)!</h2>
+            <h3>Welcome to this sample app for Reactive Couchbase and SecureSocial integration.</h3>
+            <p>You migth try to sign up, login, logout and navigate between secured and user aware pages.</p>
+            <p>
+                @{
+                    if(secured) <a href="/userAware" class="btn btn-default btn-lg" role="button">Go to user aware page</a>
+                    else <a href="/secured" class="btn btn-default btn-lg" role="button">Go to secured page</a>
+                }
+                @{
+                    user match {
+                        case Some(_) => <a href="/logout" class="btn btn-primary btn-lg" role="button">Logout</a>
+                        case _ => <a href="/login" class="btn btn-primary btn-lg" role="button">Login</a>
+                    }
+                }
+            </p>
+            <p>
+            </p>
+        </div>
+    </div>
 
 }

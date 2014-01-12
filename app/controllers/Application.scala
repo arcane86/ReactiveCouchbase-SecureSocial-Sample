@@ -10,15 +10,11 @@ object Application extends Controller with securesocial.core.SecureSocial {
 
     def secured = SecuredAction {
         implicit request =>
-            Ok(views.html.index(request.user.fullName))
+            Ok(views.html.index(true, Some(request.user)))
     }
 
     def userAware = UserAwareAction {
         implicit request =>
-            val userName = request.user match {
-                case Some(user) => user.fullName
-                case _ => "guest"
-            }
-            Ok(views.html.index(userName))
+            Ok(views.html.index(false, request.user))
     }
 }
