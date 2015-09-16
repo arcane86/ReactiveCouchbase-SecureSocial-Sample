@@ -4,7 +4,7 @@ version := "1.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(
   cache,
-  "securesocial" %% "securesocial" % "2.1.2",
+  "ws.securesocial" %% "securesocial" % "2.1.4",
   "org.reactivecouchbase" %% "reactivecouchbase-play" % "0.2"
 )
 
